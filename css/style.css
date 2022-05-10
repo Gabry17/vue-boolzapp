@@ -44,7 +44,7 @@ i{
 }
 
 .profile img{
-    height: 70%;
+    height: 50px;
     margin: .5em;
     border-radius: 50%;
     vertical-align: middle;
@@ -121,7 +121,7 @@ i{
 }
 
 .contact img{
-    height: 60px;
+    height: 50px;
     border-radius: 50%;
     margin: 0 .5em;
 }
@@ -146,6 +146,30 @@ i{
 .user-top{
     height: 70px;
     background-color: #f1efef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.left{
+    width: 60%;
+}
+
+.left img{
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 1em;
+}
+
+.left p {
+    color: gray;
+}
+
+.rigth i{
+    margin: .2em;
+    font-size: 1.2em;
 }
 
 /* main */

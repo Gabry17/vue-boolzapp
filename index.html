@@ -65,11 +65,11 @@
                     <!-- /filter -->
 
                     <!-- contact -->
-                    <div class="contact">
+                    <div v-for="element in contacts" class="contact" :class="{ active: element.name === 'Michele' }">
 
-                        <img src="img/avatar_1.jpg" alt="avatar1">
+                        <img :src="'img/avatar'+ element.avatar +'.jpg'" :alt="element.name">
                         <div class="user">
-                            <h3>name</h3>
+                            <h3>{{element.name}}</h3>
                             <p>Ultimo messaggio inviato</p>
                         </div>
                         <div class="hours">

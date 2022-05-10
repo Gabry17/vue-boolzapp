@@ -187,21 +187,31 @@ i{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    
 }
 
 .message-me span{
     border-radius: 10px;
     background-color: #8acd8a;
-    min-height: 30px;
     min-width: 30%;
     max-width: 50%;
+    padding: 1em;
+    margin: .2em;
+}
+
+.message-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .message-user span{
     border-radius: 10px;
     background-color: white;
-    min-width: 20%;
+    min-width: 30%;
     max-width: 50%;
+    padding: 1em;
+    margin: .2em;
 }
 
 /* foot */

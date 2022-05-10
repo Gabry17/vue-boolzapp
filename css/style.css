@@ -179,8 +179,48 @@ i{
     overflow: auto;
 }
 
+.container-message{
+    padding: 2em;
+}
+
+.message-me {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.message-me span{
+    border-radius: 10px;
+    background-color: #8acd8a;
+    min-height: 30px;
+    min-width: 30%;
+    max-width: 50%;
+}
+
+.message-user span{
+    border-radius: 10px;
+    background-color: white;
+    min-width: 20%;
+    max-width: 50%;
+}
+
 /* foot */
 .add-message{
     height: 70px;
     background-color: #f1efef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+
+.add-message i{
+    font-size: 1.7em;
+    color: gray;
+}
+
+.add-message input{
+    padding: 1em;
+    border: none;
+    width: 80%;
 }

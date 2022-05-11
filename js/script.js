@@ -165,6 +165,20 @@ const app = new Vue({
                 ],
             }
         ],
-        contactIndex: 0
+        contactIndex: 0,
+        chat: ''
+        
+    },
+    methods:{
+        changeChat(index){
+            this.contactIndex = index;
+        },
+        enterChat(){
+            this.contacts.forEach(e =>{
+                e.messages.push({
+                    message: this.chat
+                })
+            })
+        }
     }
 })

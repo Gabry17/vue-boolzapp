@@ -65,7 +65,7 @@
                     <!-- /filter -->
 
                     <!-- contact -->
-                    <div v-for="(element,index) in contacts"  class="contact flex" :class="{ active: contactIndex === index }">
+                    <div v-for="(element,index) in contacts" @click="changeChat(index)" class="contact flex" :class="{ active: contactIndex === index }">
 
                         <img :src="'img/avatar'+ element.avatar +'.jpg'" :alt="element.name">
                         <div class="user">
@@ -119,7 +119,7 @@
                 <div class="add-message flex">
                     <i class="fas fa-smile"></i>
 
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" @keyup.enter="enterChat" v-model="chat" placeholder="Scrivi un messaggio">
 
                     <i class="fas fa-microphone"></i>
                 </div>

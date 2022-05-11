@@ -26,11 +26,11 @@
                 <!-- navtop -->
                 <div class="nav-top">
                     <!-- profile -->
-                    <div class="profile">
+                    <div class="profile flex">
                         
                         <div>
                             <img src="img/avatar_io.jpg" alt="image profile">
-                            <span>name</span>
+                            <span>Sara</span>
                         </div>
                         
                         <div class="icon">
@@ -42,11 +42,11 @@
                     <!-- /profile -->
 
                     <!-- notice -->
-                    <div class="notice">
+                    <div class="notice flex">
                         <i class="fas fa-bell-slash"></i>
                         <div class="text">
                             <p>Ricevi notifiche di nuovi messaggi</p>
-                            <a href="">Attiva notifiche desktop</a>
+                            <a class="gray" href="">Attiva notifiche desktop</a>
                         </div>
                     </div>
                     <!-- /notice -->
@@ -65,15 +65,15 @@
                     <!-- /filter -->
 
                     <!-- contact -->
-                    <div v-for="element in contacts" class="contact" :class="{ active: element.name === 'Michele' }">
+                    <div v-for="element in contacts" class="contact flex" :class="{ active: element.name === 'Michele' }">
 
                         <img :src="'img/avatar'+ element.avatar +'.jpg'" :alt="element.name">
                         <div class="user">
                             <h3>{{element.name}}</h3>
-                            <p>Ultimo messaggio inviato</p>
+                            <p class="gray">message</p>
                         </div>
-                        <div class="hours">
-                            <p>12:00</p>
+                        <div class="date">
+                            <p class="gray">date</p>
                         </div>
                     </div>
                     
@@ -87,11 +87,11 @@
             <!-- MESSAGE -->
             <div class="message">
                 <!-- message-top -->
-                <div class="user-top">
+                <div class="user-top flex">
                     <div class="left">
-                        <img src="img/avatar_1.jpg" alt="user chat">
-                        <h3>name</h3>
-                        <p>Ultimo accesso oggi alle 12:00</p>
+                        <img :src="'img/avatar'+ contacts[0].avatar +'.jpg'" :alt="contacts[0].name">
+                        <h3>{{contacts[0].name}}</h3>
+                        <p class="gray">Ultimo accesso oggi alle 12:00</p>
                     </div>
                     <div class="rigth">
                         <i class="fas fa-search"></i>
@@ -105,19 +105,19 @@
                 <!-- message-main -->
                 <div class="chat">
                     <div class="container-message">
-                        <div class="message-me">
-                            <span>Ei ciao</span>
-                            <span>come va?</span>
+                        <div class="message-me flex">
+                            <p>Ei ciao <span class="hours">12:00</span></p>
+                            <p>come va? <span class="hours">12:00</span></p>
                         </div>
-                        <div class="message-user">
-                            <span>Tutto bene</span>
+                        <div class="message-user flex">
+                            <p>Tutto bene<span class="hours">12:00</span></p>
                         </div>
                     </div>
                 </div>
                 <!-- /message-main -->
 
                 <!-- message-foot -->
-                <div class="add-message">
+                <div class="add-message flex">
                     <i class="fas fa-smile"></i>
 
                     <input type="text" placeholder="Scrivi un messaggio">

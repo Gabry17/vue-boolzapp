@@ -175,10 +175,18 @@ const app = new Vue({
         },
         enterChat(){
             this.contacts.forEach(e =>{
-                e.messages.push({
-                    message: this.chat,
-                    status: 'sent'
-                })
+                if(this.chat.length > 2){
+                    e.messages.push({
+                        message: this.chat,
+                        status: 'sent'
+                    },
+                    {
+                        message: 'ok',
+                        status: 'received'
+                    }
+                    );
+                }
+                this.chat = '';
             })
         }
     }

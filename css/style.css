@@ -186,9 +186,6 @@ i{
     height: calc(100% - 140px);
     background-image: url(../img/mine.jpg);
     overflow: auto;
-}
-
-.container-message{
     padding: 2em;
 }
 

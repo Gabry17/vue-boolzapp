@@ -10,7 +10,7 @@ body{
     font-family: 'Lato', sans-serif;
     height: 100vh;
     width: 100%;
-    background: linear-gradient( 180deg, green,white);
+    background-image: linear-gradient( #366036 0vh, #366036 15vh, #e1dede 15vh, #e1dede 100%);
     position: relative;
 }
 
@@ -22,10 +22,12 @@ body{
     left: 50%;
     transform: translate( -50%, -50%);
     display: flex;
+    min-width: 950px;
 }
 
 i{
-    color:#c4c1c1;;
+    color:#c4c1c1;
+    cursor: pointer;
 }
 
 .gray{
@@ -57,6 +59,10 @@ i{
     vertical-align: middle;
 }
 
+.profile h3{
+    display: inline-block;
+}
+
 .icon i{
     line-height: 65px;
     margin: .2em;
@@ -66,7 +72,7 @@ i{
 
 .notice{
     height: 80px;
-    background-color: #6ed8ff;
+    background-color: #8edafc;
     align-items: center;
     padding: 0 .5em;
 }
@@ -76,7 +82,7 @@ i{
     font-size: 1.2em;
     padding:1.2em .5em;
     background-color: white;
-    color: #6ed8ff;
+    color: #8edafc;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -99,12 +105,14 @@ i{
     width: 100%;
     background-color: white;
     border: 1px solid lightgray;
+    border-radius: 5px;
 }
 
 .contact-filter label{
     border-right: 1px solid lightgray;
     padding: .3em 1.5em;
     font-size: 13px;
+    cursor: pointer;
 }
 
 #search{

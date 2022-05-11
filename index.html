@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1 ">
     <title>BOOLZAP</title>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
                         
                         <div>
                             <img src="img/avatar_io.jpg" alt="image profile">
-                            <span>Sara</span>
+                            <h3>Sara</h3>
                         </div>
                         
                         <div class="icon">
@@ -65,12 +65,12 @@
                     <!-- /filter -->
 
                     <!-- contact -->
-                    <div v-for="element in contacts" class="contact flex" :class="{ active: element.name === 'Michele' }">
+                    <div v-for="(element,index) in contacts"  class="contact flex" :class="{ active: contactIndex === index }">
 
                         <img :src="'img/avatar'+ element.avatar +'.jpg'" :alt="element.name">
                         <div class="user">
                             <h3>{{element.name}}</h3>
-                            <p class="gray">message</p>
+                            <p class="gray">tt</p>
                         </div>
                         <div class="date">
                             <p class="gray">date</p>
@@ -89,8 +89,8 @@
                 <!-- message-top -->
                 <div class="user-top flex">
                     <div class="left">
-                        <img :src="'img/avatar'+ contacts[0].avatar +'.jpg'" :alt="contacts[0].name">
-                        <h3>{{contacts[0].name}}</h3>
+                        <img :src="'img/avatar'+ contacts[contactIndex].avatar +'.jpg'" :alt="contacts[contactIndex].name">
+                        <h3>{{contacts[contactIndex].name}}</h3>
                         <p class="gray">Ultimo accesso oggi alle 12:00</p>
                     </div>
                     <div class="rigth">
@@ -105,9 +105,8 @@
                 <!-- message-main -->
                 <div class="chat">
                     <div class="container-message">
-                        <div class="message-me flex">
-                            <p>Ei ciao <span class="hours">12:00</span></p>
-                            <p>come va? <span class="hours">12:00</span></p>
+                        <div v-for="(e,index) in contacts" class="message-me flex">
+                            <p>{{ e.messages[contactIndex].message }} <span class="hours">12:00</span></p>
                         </div>
                         <div class="message-user flex">
                             <p>Tutto bene<span class="hours">12:00</span></p>

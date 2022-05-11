@@ -104,12 +104,12 @@
 
                 <!-- message-main -->
                 <div class="chat">
-                    <div class="container-message">
-                        <div v-for="(e,index) in contacts" class="message-me flex">
-                            <p>{{ e.messages[contactIndex].message }} <span class="hours">12:00</span></p>
+                    <div v-for="(msg, index) in contacts[contactIndex].messages" class="container-message">
+                        <div v-if=" msg.status === 'sent' " class="message-me flex">
+                            <p>{{ msg.message  }} <span class="hours">12:00</span></p>
                         </div>
-                        <div class="message-user flex">
-                            <p>Tutto bene<span class="hours">12:00</span></p>
+                        <div v-if=" msg.status === 'received'" class="message-user flex">
+                            <p>{{ msg.message }}<span class="hours">12:00</span></p>
                         </div>
                     </div>
                 </div>

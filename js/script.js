@@ -176,7 +176,8 @@ const app = new Vue({
         enterChat(){
             this.contacts.forEach(e =>{
                 e.messages.push({
-                    message: this.chat
+                    message: this.chat,
+                    status: 'sent'
                 })
             })
         }

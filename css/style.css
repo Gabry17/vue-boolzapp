@@ -210,6 +210,7 @@ i{
     margin: .2em;
     position: relative;
     box-shadow: 1px 1px 1px black;
+    display: flex;
 }
 
 .message-user {
@@ -227,6 +228,14 @@ i{
     bottom: 5px;
     right: 5px;
 }
+
+.message-user p i,
+.message-me p i{
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+}
+
 
 /* foot */
 .add-message{

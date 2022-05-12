@@ -187,7 +187,7 @@ const app = new Vue({
                 }
                 this.chat = '';
             })
-            setTimeout(this.received(), 1000)
+            setTimeout(this.received, 1000)
         },
         received(){
             let thisContact = this.contacts[this.contactIndex];

@@ -166,7 +166,8 @@ const app = new Vue({
             }
         ],
         contactIndex: 0,
-        chat: ''
+        chat: '',
+        filter:''
         
     },
     methods:{
@@ -175,7 +176,8 @@ const app = new Vue({
         },
         enterChat(){
             this.contacts.forEach(e =>{
-                if(this.chat.length > 2){
+                let trimmed = this.chat.trim();
+                if(trimmed.length > 0){
                     e.messages.push({
                         message: this.chat,
                         status: 'sent'
@@ -187,6 +189,16 @@ const app = new Vue({
                     );
                 }
                 this.chat = '';
+            })
+        },
+        filterContact(){
+            this.contacts.forEach(key => {
+                let filterSpace = this.filter.trim();
+                if(key.name.toLowerCase().includes(filterSpace.toLowerCase())){
+                    key.visible = true;
+                } else {
+                    key.visible = false;
+                }
             })
         }
     }

@@ -59,18 +59,28 @@
                     <div class="filter">
                         <div class="contact-filter">
                             <label class="style" for="search"><i class="fas fa-search"></i></label>
-                            <input class="style" id="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input class="style" 
+                            id="search" 
+                            type="text" 
+                            v-model="filter" 
+                            @keyup="filterContact"
+                            placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
                     <!-- /filter -->
 
                     <!-- contact -->
-                    <div v-for="(element,index) in contacts" @click="changeChat(index)" class="contact flex" :class="{ active: contactIndex === index }">
+                    <div 
+                    v-for="(element,index) in contacts" 
+                    @click="changeChat(index)" 
+                    class="contact flex" 
+                    :class="{ active: contactIndex === index }"
+                    v-if="element.visible">
 
                         <img :src="'img/avatar'+ element.avatar +'.jpg'" :alt="element.name">
                         <div class="user">
                             <h3>{{element.name}}</h3>
-                            <p class="gray">tt</p>
+                            <p class="gray">ciao</p>
                         </div>
                         <div class="date">
                             <p class="gray">date</p>

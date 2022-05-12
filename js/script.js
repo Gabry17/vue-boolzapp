@@ -167,8 +167,8 @@ const app = new Vue({
         ],
         contactIndex: 0,
         chat: '',
-        filter:''
-        
+        filter:'',
+        //last: 0
     },
     methods:{
         changeChat(index){
@@ -177,20 +177,30 @@ const app = new Vue({
         enterChat(){
             this.contacts.forEach(e =>{
                 let trimmed = this.chat.trim();
+                let thisContact = this.contacts[this.contactIndex]
                 if(trimmed.length > 0){
-                    e.messages.push({
+                    thisContact.messages.push({
+                        //date: this.getCurrentTime(),
                         message: this.chat,
                         status: 'sent'
-                    },
-                    {
-                        message: 'ok',
-                        status: 'received'
                     }
                     );
                 }
                 this.chat = '';
             })
+            //setTimeout(this.received(), 1000)
         },
+        // received(){
+        //     let thisContact = this.contacts[this.contactIndex]
+        //         if(this.chat.length > 0){
+        //             thisContact.messages.push({
+        //                 //date: this.getCurrentTime(),
+        //                 message: 'ok',
+        //                 status: 'received'
+        //             }
+        //             );
+        //     }
+        // },
         filterContact(){
             this.contacts.forEach(key => {
                 let filterSpace = this.filter.trim();
@@ -200,6 +210,12 @@ const app = new Vue({
                     key.visible = false;
                 }
             })
-        }
+        },
+        // lastIndex(){
+        //     this.contacts.forEach(e => {
+        //         this.last = e.messages.length -1;
+        //         console.log(this.last);
+        //     })
+        // }
     }
 })

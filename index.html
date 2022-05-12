@@ -115,19 +115,28 @@
 
                 <!-- message-main -->
                 <div class="chat">
-                    <div v-for="(msg, index) in contacts[contactIndex].messages" class="container-message">
+                    <div
+                    v-for="(msg, index) in contacts[contactIndex].messages" 
+                    class="container-message">
                         <div v-if=" msg.status === 'sent' " class="message-me flex">
                             <p>{{ msg.message  }} 
                                 <i class="fas fa-angle-down"></i>
-                                
                                 <span class="hours">12:00</span>
                             </p>
+                            <div class="remove-me">
+                                <div>info</div>
+                                <div @click="removeMessage (index)">elimina messaggio</div>
+                            </div>
                         </div>
                         <div v-if=" msg.status === 'received'" class="message-user flex">
                             <p>{{ msg.message }}
                                 <i class="fas fa-angle-down"></i>
                                 <span class="hours">12:00</span>
                             </p>
+                            <div class="remove-user">
+                                <div>info</div>
+                                <div @click="removeMessage (index)">elimina messaggio</div>
+                            </div>
                             
                         </div>
                     </div>

@@ -207,6 +207,10 @@ const app = new Vue({
                     key.visible = false;
                 }
             })
+        },
+        removeMessage(index){
+            let thisContact = this.contacts[this.contactIndex];
+            thisContact.messages.splice(index,1);
         }
     }
 })

@@ -198,6 +198,7 @@ i{
 .message-user {
     flex-direction: column;
     align-items: flex-end;
+    position: relative;
 }
 
 .message-me p,
@@ -229,11 +230,34 @@ i{
     right: 5px;
 }
 
-.message-user p i,
-.message-me p i{
+.message-user i,
+.message-me i{
     position: absolute;
     bottom: 15px;
     right: 5px;
+    display: none;
+    color: gray;
+}
+
+.remove-me,
+.remove-user{
+    background-color: white;
+    padding: 1em;
+    position: absolute;
+    bottom: -50px;
+    z-index: 999;
+    display: none;
+}
+
+.message-me:hover .remove-me, .message-me:hover i,
+.message-user:hover .remove-user, .message-user:hover i{
+    display: block;
+}
+
+
+.remove-me div:hover,
+.remove-user div:hover {
+    background-color: #cccaca;
 }
 
 

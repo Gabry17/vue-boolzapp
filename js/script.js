@@ -1,3 +1,4 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
 //VUE
 const app = new Vue({
     el:'#root',
@@ -167,7 +168,7 @@ const app = new Vue({
         ],
         contactIndex: 0,
         chat: '',
-        filter:'',
+        filter:''
     },
     methods:{
         changeChat(index){
@@ -179,7 +180,7 @@ const app = new Vue({
                 let thisContact = this.contacts[this.contactIndex]
                 if(trimmed.length > 0){
                     thisContact.messages.push({
-                        //date: this.getCurrentTime(),
+                        date: this.dateNewMsg(),
                         message: this.chat,
                         status: 'sent'
                     }
@@ -192,6 +193,7 @@ const app = new Vue({
         received(){
             let thisContact = this.contacts[this.contactIndex];
             thisContact.messages.push({
+            date: this.dateNewMsg(),
             message: 'ok',
             status: 'received'
             }
@@ -211,6 +213,9 @@ const app = new Vue({
         removeMessage(index){
             let thisContact = this.contacts[this.contactIndex];
             thisContact.messages.splice(index,1);
+        },
+        dateNewMsg(){
+            return dayjs().format('DD-MM-YYYY HH:mm');
         }
     }
 })
